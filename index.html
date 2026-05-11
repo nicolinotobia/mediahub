@@ -1,1 +1,68 @@
-<h1>TEST</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MediaHub Player</title>
+<style>
+body{
+  margin:0;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+video{
+  width:480px;
+  height:270px;
+  background:black;
+}
+.controls{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+}
+button{
+  width:120px;
+  height:45px;
+  font-size:18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<video id="vid" autoplay playsinline>
+  <source src="annamo_bene-ezgif.com-resize-video.mp4" type="video/mp4">
+</video>
+
+<div class="controls">
+  <button onclick="playVideo()">Play</button>
+  <button onclick="pauseVideo()">Pausa</button>
+  <button onclick="stopVideo()">Stop</button>
+</div>
+
+<script>
+const v = document.getElementById("vid");
+
+function playVideo(){
+  v.play();
+}
+
+function pauseVideo(){
+  v.pause();
+}
+
+function stopVideo(){
+  v.pause();
+  v.currentTime = 0;
+}
+</script>
+
+</body>
+</html>
