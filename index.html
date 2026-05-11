@@ -51,31 +51,19 @@ button{
 
 <h1>testo che puoi modificare</h1>
 
+<!-- ❗ QUI LA DIFFERENZA FONDAMENTALE: niente controls -->
 <video id="vid" autoplay playsinline poster="annamo_bene-ezgif.com-resize-video.jpg">
   <source src="annamo_bene-ezgif.com-resize-video.mp4" type="video/mp4">
 </video>
 
 <div class="controls">
-  <button onclick="playVideo()">Play</button>
-  <button onclick="pauseVideo()">Pausa</button>
-  <button onclick="stopVideo()">Stop</button>
+  <button onclick="v.play()">Play</button>
+  <button onclick="v.pause()">Pausa</button>
+  <button onclick="v.pause(); v.currentTime=0;">Stop</button>
 </div>
 
 <script>
 const v = document.getElementById("vid");
-
-function playVideo(){
-  v.play();
-}
-
-function pauseVideo(){
-  v.pause();
-}
-
-function stopVideo(){
-  v.pause();
-  v.currentTime = 0;
-}
 </script>
 
 </body>
