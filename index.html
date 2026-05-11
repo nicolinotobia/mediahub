@@ -51,15 +51,32 @@ button{
 
 <h1>testo che puoi modificare</h1>
 
-<video id="vid" controls autoplay playsinline poster="annamo_bene-ezgif.com-resize-video.jpg">
+<video id="vid" autoplay playsinline poster="annamo_bene-ezgif.com-resize-video.jpg">
   <source src="annamo_bene-ezgif.com-resize-video.mp4" type="video/mp4">
 </video>
 
 <div class="controls">
-  <button onclick="document.getElementById('vid').play()">Play</button>
-  <button onclick="document.getElementById('vid').pause()">Pausa</button>
-  <button onclick="let v=document.getElementById('vid'); v.pause(); v.currentTime=0;">Stop</button>
+  <button onclick="playVideo()">Play</button>
+  <button onclick="pauseVideo()">Pausa</button>
+  <button onclick="stopVideo()">Stop</button>
 </div>
+
+<script>
+const v = document.getElementById("vid");
+
+function playVideo(){
+  v.play();
+}
+
+function pauseVideo(){
+  v.pause();
+}
+
+function stopVideo(){
+  v.pause();
+  v.currentTime = 0;
+}
+</script>
 
 </body>
 </html>
